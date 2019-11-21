@@ -1,6 +1,6 @@
     console.log(process.argv);
 
-    let num: string = process.argv[2];
+    let num: string = process.argv[1];
     console.log(num);
     
 
