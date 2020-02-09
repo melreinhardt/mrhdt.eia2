@@ -4,7 +4,7 @@
   "description": "elrhdt",
   "main": "test.js",
   "scripts": {
-    "start": "node Server/Server.js"
+    "start": "node Vogelhaus/Server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/melreinhardt/mrhdt.eia2/issues"
   },
-  "homepage": "https://github.com/melreinhardt/mrhdt.eia2#readme"
+  "homepage": "https://github.com/melreinhardt/mrhdt.eia2#readme",
+  "dependencies": {
+    "@types/mongodb": "^3.3.11",
+    "mongodb": "^3.3.5"
+  }
 }
