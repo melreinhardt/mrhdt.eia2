@@ -9,7 +9,6 @@ var Moorhuhn;
         let query = "command=retrieve";
         let response = await fetch(Moorhuhn.url + "?" + query);
         let responseText = await response.text();
-        alert(responseText);
         let highscorelists = document.querySelector("div#report");
         highscorelists.innerText = responseText;
     }

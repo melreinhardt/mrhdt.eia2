@@ -11,7 +11,6 @@ namespace Moorhuhn {
         let response: Response = await fetch(url + "?" + query);
         let responseText: string = await response.text();
 
-        alert(responseText);
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
         highscorelists.innerText = responseText;
     }
