@@ -1,6 +1,8 @@
 namespace Moorhuhn {
     window.addEventListener("load", handleLoad);
 
+    let url: string = "https://elfried.herokuapp.com/";
+
     function handleLoad(_event: Event): void {
     document.getElementById("Highscoreliste").addEventListener("click", handleRetriveHS);
 
