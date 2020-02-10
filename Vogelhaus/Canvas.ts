@@ -383,7 +383,7 @@ namespace Moorhuhn {
     }
     
     async function handleSendHS(_name: string, _score: number): Promise<void> {
-        let query: any = _score && _name;
+        let query: any = "score=" + _score + "name=" +_name;
         let response: Response = await fetch(url + "?" + query.toString());
         let responseText: string = await response.text();
         alert(response);

@@ -285,7 +285,7 @@ var Moorhuhn;
     }
     Moorhuhn.deleteFood = deleteFood;
     async function handleSendHS(_name, _score) {
-        let query = _score && _name;
+        let query = "score=" + _score + "name=" + _name;
         let response = await fetch(Moorhuhn.url + "?" + query.toString());
         let responseText = await response.text();
         alert(response);
