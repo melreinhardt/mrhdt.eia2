@@ -24,7 +24,7 @@ namespace Moorhuhn {
         crc2 = <CanvasRenderingContext2D>canvas.getContext("2d");
 
         let horizon: number = crc2.canvas.height / 2;
-        
+
 
         //alert("Regeln: 20 sek zeit um so viele wie möglich abzuwerfen mit der space-Taste kann man futter streuen / linke maus taste - werfen");
 
@@ -381,11 +381,22 @@ namespace Moorhuhn {
     export function deleteFood(): void {
         foodsArray.splice(0, 1); //an nullter stelle wird 1 element gelöscht
     }
+    
+    async function handleSendHS(_name: string, _score: number): Promise<void> {
+        let query: string = "_score & _name";
+        let response: Response = await fetch(url + "?" + query.toString());
+        let responseText: string = await response.text();
+        alert(response);
+    }
 
     function handleEnd(): void {
-        prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
-
-
+        let name: any = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
+        if (name != null) {
+            handleSendHS(name, score);
+            
+        }
     }
+
+    
 
 }

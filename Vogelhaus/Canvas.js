@@ -284,8 +284,17 @@ var Moorhuhn;
         foodsArray.splice(0, 1); //an nullter stelle wird 1 element gelöscht
     }
     Moorhuhn.deleteFood = deleteFood;
+    async function handleSendHS(_name, _score) {
+        let query = "_score & _name";
+        let response = await fetch(Moorhuhn.url + "?" + query.toString());
+        let responseText = await response.text();
+        alert(response);
+    }
     function handleEnd() {
-        prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
+        let name = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
+        if (name != null) {
+            handleSendHS(name, score);
+        }
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //# sourceMappingURL=Canvas.js.map
