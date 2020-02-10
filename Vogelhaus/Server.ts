@@ -52,7 +52,8 @@ export namespace Moorhuhn {
 
                 else
                     _response.write(JSON.stringify(report));
-            } else {
+            } 
+            else {
                 console.log("urlQuery: ", url.query);
                 let jsonString: string = JSON.stringify(url.query);
                 _response.write(jsonString);

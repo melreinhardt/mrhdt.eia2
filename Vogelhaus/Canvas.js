@@ -285,8 +285,8 @@ var Moorhuhn;
     }
     Moorhuhn.deleteFood = deleteFood;
     async function handleSendHS(_name, _score) {
-        let query = "score=" + _score + "name=" + _name;
-        let response = await fetch(Moorhuhn.url + "?" + query.toString());
+        let query = "score=" + _score + "&name=" + _name;
+        let response = await fetch(Moorhuhn.url + "?" + query);
         let responseText = await response.text();
         alert(response);
     }
@@ -294,7 +294,7 @@ var Moorhuhn;
         let name = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
         if (name != null) {
             handleSendHS(name, score);
-            window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self");
+            window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self"); //self das es 
         }
     }
 })(Moorhuhn || (Moorhuhn = {}));
