@@ -12,7 +12,6 @@ var Moorhuhn;
             this.velocity = new Moorhuhn.Vector(4, 0);
             this.wingColor = this.getRandomColor();
             //this.savedPosition = _position;
-            //this.wingColor = this.getRandomColor()
         }
         move() {
             this.position.add(this.velocity);

@@ -8,8 +8,6 @@ namespace Moorhuhn {
             this.velocity = new Vector(4, 0);
             this.wingColor = this.getRandomColor();
             //this.savedPosition = _position;
-
-            //this.wingColor = this.getRandomColor()
         }
 
         setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)

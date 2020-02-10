@@ -21,6 +21,10 @@ var Moorhuhn;
             Moorhuhn.crc2.closePath();
             Moorhuhn.crc2.restore();
         }
+        update() {
+            this.move();
+            this.draw();
+        }
     }
     Moorhuhn.Snowflake = Snowflake;
 })(Moorhuhn || (Moorhuhn = {}));
