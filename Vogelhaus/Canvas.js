@@ -128,6 +128,34 @@ var Moorhuhn;
         Moorhuhn.crc2.fillStyle = "#f2f2f2";
         Moorhuhn.crc2.fill();
         Moorhuhn.crc2.closePath();
+        Moorhuhn.crc2.beginPath();
+        Moorhuhn.crc2.arc(-85, -273, 2, Math.PI * -0.5, Math.PI * 2);
+        Moorhuhn.crc2.fillStyle = "black";
+        Moorhuhn.crc2.stroke();
+        Moorhuhn.crc2.fill();
+        Moorhuhn.crc2.closePath();
+        Moorhuhn.crc2.beginPath();
+        Moorhuhn.crc2.arc(-75, -273, 2, Math.PI * -0.5, Math.PI * 2);
+        Moorhuhn.crc2.fillStyle = "black";
+        Moorhuhn.crc2.stroke();
+        Moorhuhn.crc2.fill();
+        Moorhuhn.crc2.closePath();
+        Moorhuhn.crc2.beginPath();
+        Moorhuhn.crc2.arc(-80, -268, 3, Math.PI * -0.5, Math.PI * 2);
+        Moorhuhn.crc2.fillStyle = "orange";
+        Moorhuhn.crc2.fill();
+        Moorhuhn.crc2.stroke();
+        Moorhuhn.crc2.closePath();
+        Moorhuhn.crc2.beginPath();
+        Moorhuhn.crc2.stroke();
+        Moorhuhn.crc2.fillStyle = "black";
+        Moorhuhn.crc2.fillRect(-102, -290, 45, 7);
+        Moorhuhn.crc2.closePath();
+        Moorhuhn.crc2.beginPath();
+        Moorhuhn.crc2.stroke();
+        Moorhuhn.crc2.fillStyle = "black";
+        Moorhuhn.crc2.fillRect(-95, -310, 30, 20);
+        Moorhuhn.crc2.closePath();
         Moorhuhn.crc2.restore();
     }
     function drawBirdHouse(_position) {
@@ -286,7 +314,7 @@ var Moorhuhn;
     function handleSendHS(_name, _score) {
         let query = "score=" + _score + "&name=" + _name;
         let response = fetch(Moorhuhn.url + "?" + query);
-        //let responseText: string =  response.text();
+        //let responseText: Promise<string> = response.text();
         alert(response);
     }
     function handleEnd() {

@@ -173,6 +173,39 @@ namespace Moorhuhn {
         crc2.fill();
         crc2.closePath();
 
+        crc2.beginPath();
+        crc2.arc(-85, -273, 2, Math.PI * -0.5, Math.PI * 2);
+        crc2.fillStyle = "black";
+        crc2.stroke();
+        crc2.fill();
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.arc(-75, -273, 2, Math.PI * -0.5, Math.PI * 2);
+        crc2.fillStyle = "black";
+        crc2.stroke();
+        crc2.fill();
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.arc(-80, -268, 3, Math.PI * -0.5, Math.PI * 2);
+        crc2.fillStyle = "orange";
+        crc2.fill();
+        crc2.stroke();
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.stroke();
+        crc2.fillStyle = "black";
+        crc2.fillRect(-102, -290, 45, 7);
+        crc2.closePath();
+
+        crc2.beginPath();
+        crc2.stroke();
+        crc2.fillStyle = "black";
+        crc2.fillRect(-95, -310, 30, 20);
+        crc2.closePath();
+
         crc2.restore();
     }
 
@@ -381,8 +414,8 @@ namespace Moorhuhn {
 
     function handleSendHS(_name: string, _score: number): void {
         let query: string = "score=" + _score + "&name=" + _name;
-        let response: Promise<Response> =  fetch(url + "?" + query);
-        //let responseText: string =  response.text();
+        let response: Promise<Response> = fetch(url + "?" + query);
+        //let responseText: Promise<string> = response.text();
         alert(response);
     }
 
