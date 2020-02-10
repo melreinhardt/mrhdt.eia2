@@ -295,7 +295,7 @@ var Moorhuhn;
         if (name != null) {
             handleSendHS(name, score);
             let strtPage = "https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html";
-            window.open(strtPage);
+            open(strtPage);
         }
     }
 })(Moorhuhn || (Moorhuhn = {}));

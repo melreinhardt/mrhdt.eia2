@@ -394,7 +394,7 @@ namespace Moorhuhn {
         if (name != null) {
             handleSendHS(name, score);
             let strtPage: string = "https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html";
-            window.open(strtPage);
+            open(strtPage);
             
         }
     }
