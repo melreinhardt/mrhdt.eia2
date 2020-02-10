@@ -383,7 +383,7 @@ namespace Moorhuhn {
         let query: string = "score=" + _score + "&name=" + _name;
         let response: Promise<Response> =  fetch(url + "?" + query);
         //let responseText: string =  response.text();
-        alert(response);
+        //alert(response);
     }
 
     function handleEnd(): void {
