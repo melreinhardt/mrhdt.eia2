@@ -3,9 +3,6 @@ namespace Moorhuhn {
 
         constructor(_position: Vector) {
             super(_position);
-           /* let x = Math.random() * 1200;
-            let y = Math.random() * 550;
-            this.position = new Vector(x, y); */
             this.velocity = new Vector(0, 3);
         }
 

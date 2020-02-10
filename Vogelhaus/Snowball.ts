@@ -2,7 +2,7 @@ namespace Moorhuhn {
     export class Snowball extends Movables {
         size: number = 85;
         r1: number = 25;
-        timer: number = 60
+        timer: number = 60;
 
         constructor(_position: Vector) {
             super(_position);

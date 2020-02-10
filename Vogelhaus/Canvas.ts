@@ -25,9 +25,6 @@ namespace Moorhuhn {
 
         let horizon: number = crc2.canvas.height / 2;
 
-
-        //alert("Regeln: 20 sek zeit um so viele wie möglich abzuwerfen mit der space-Taste kann man futter streuen / linke maus taste - werfen");
-
         let posMountains: Vector = new Vector(0, horizon);
 
         drawBackground();
@@ -382,10 +379,10 @@ namespace Moorhuhn {
         foodsArray.splice(0, 1); //an nullter stelle wird 1 element gelöscht
     }
 
-    async function handleSendHS(_name: string, _score: number): Promise<void> {
+    function handleSendHS(_name: string, _score: number): void {
         let query: string = "score=" + _score + "&name=" + _name;
-        let response: Response = await fetch(url + "?" + query);
-        let responseText: string = await response.text();
+        let response: Promise<Response> =  fetch(url + "?" + query);
+        //let responseText: string =  response.text();
         alert(response);
     }
 
@@ -398,6 +395,7 @@ namespace Moorhuhn {
         }
         window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self");
     }
+
 
 
 

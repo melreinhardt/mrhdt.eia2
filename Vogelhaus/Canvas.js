@@ -17,7 +17,6 @@ var Moorhuhn;
             return;
         Moorhuhn.crc2 = canvas.getContext("2d");
         let horizon = Moorhuhn.crc2.canvas.height / 2;
-        //alert("Regeln: 20 sek zeit um so viele wie möglich abzuwerfen mit der space-Taste kann man futter streuen / linke maus taste - werfen");
         let posMountains = new Moorhuhn.Vector(0, horizon);
         drawBackground();
         drawSun(new Moorhuhn.Vector(100, 75));
@@ -284,10 +283,10 @@ var Moorhuhn;
         foodsArray.splice(0, 1); //an nullter stelle wird 1 element gelöscht
     }
     Moorhuhn.deleteFood = deleteFood;
-    async function handleSendHS(_name, _score) {
+    function handleSendHS(_name, _score) {
         let query = "score=" + _score + "&name=" + _name;
-        let response = await fetch(Moorhuhn.url + "?" + query);
-        let responseText = await response.text();
+        let response = fetch(Moorhuhn.url + "?" + query);
+        //let responseText: string =  response.text();
         alert(response);
     }
     function handleEnd() {
