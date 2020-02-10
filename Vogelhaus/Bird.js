@@ -2,17 +2,19 @@
 var Moorhuhn;
 (function (Moorhuhn) {
     class Bird extends Moorhuhn.Movables {
+        //wingColor: string;
+        //savedPosition: Vector;
         constructor(_position) {
             super(_position);
-            this.setBack = () => {
-                this.position = this.savedPosition; // wie bekomme ich die vögel wieder zurück an den punkt an dem sie gekommen sind?
-                this.velocity = new Moorhuhn.Vector(4, 0);
-                //console.log(this.savedPosition);
-            };
             this.velocity = new Moorhuhn.Vector(4, 0);
-            this.savedPosition = _position;
+            //this.savedPosition = _position;
             //this.wingColor = this.getRandomColor()
         }
+        /*setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)
+            this.position = this.savedPosition; // wie bekomme ich die vögel wieder zurück an den punkt an dem sie gekommen sind?
+            this.velocity = new Vector(4, 0);
+            //console.log(this.savedPosition);
+        }*/
         move() {
             this.position.add(this.velocity);
             if (this.position.x > 1200)
@@ -23,11 +25,6 @@ var Moorhuhn;
                 console.log("stehen bleiben");
                 setTimeout(this.setBack, 5000);
             }
-            /*if (this.position == food.position){
-                this.position = food.position.copy();
-                this.velocity = new Vector(0, 0);//stay there till... ? //WARUM NICHT?????
-                console.log("geklappt");
-            }*/
         }
         drawFlying() {
             //1. fliegend

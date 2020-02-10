@@ -1,21 +1,21 @@
 namespace Moorhuhn {
     export class Bird extends Movables {
         //wingColor: string;
-        savedPosition: Vector;
+        //savedPosition: Vector;
 
         constructor(_position: Vector) {
             super(_position);
             this.velocity = new Vector(4, 0);
-            this.savedPosition = _position;
+            //this.savedPosition = _position;
 
             //this.wingColor = this.getRandomColor()
         }
 
-        setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)
+        /*setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)
             this.position = this.savedPosition; // wie bekomme ich die vögel wieder zurück an den punkt an dem sie gekommen sind?
             this.velocity = new Vector(4, 0);
             //console.log(this.savedPosition);
-        }
+        }*/
 
 
         move(): void {
@@ -30,12 +30,6 @@ namespace Moorhuhn {
                 console.log("stehen bleiben");
                 setTimeout(this.setBack, 5000);
             }
-
-            /*if (this.position == food.position){
-                this.position = food.position.copy();
-                this.velocity = new Vector(0, 0);//stay there till... ? //WARUM NICHT?????
-                console.log("geklappt"); 
-            }*/
         }
 
 
