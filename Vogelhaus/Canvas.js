@@ -294,6 +294,8 @@ var Moorhuhn;
         let name = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
         if (name != null) {
             handleSendHS(name, score);
+            let strtPage = "https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html";
+            window.open(strtPage);
         }
     }
 })(Moorhuhn || (Moorhuhn = {}));
