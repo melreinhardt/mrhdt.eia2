@@ -287,7 +287,7 @@ var Moorhuhn;
         let query = "score=" + _score + "&name=" + _name;
         let response = fetch(Moorhuhn.url + "?" + query);
         //let responseText: string =  response.text();
-        //alert(response);
+        alert(response);
     }
     function handleEnd() {
         let name = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
