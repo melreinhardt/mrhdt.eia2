@@ -1,13 +1,12 @@
 namespace Moorhuhn {
     export class Bird extends Movables {
-        wingColor: string;
+        wingColor: string = this.getRandomColor();
         savedPosition: Vector;
 
         constructor(_position: Vector) {
             super(_position);
             this.velocity = new Vector(4, 0);
-            this.wingColor = this.getRandomColor();
-            //this.savedPosition = _position;
+            this.savedPosition = _position;
         }
 
         setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)

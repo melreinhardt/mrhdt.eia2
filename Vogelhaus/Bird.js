@@ -4,14 +4,14 @@ var Moorhuhn;
     class Bird extends Moorhuhn.Movables {
         constructor(_position) {
             super(_position);
+            this.wingColor = this.getRandomColor();
             this.setBack = () => {
                 this.position = this.savedPosition; // wie bekomme ich die vögel wieder zurück an den punkt an dem sie gekommen sind?
                 this.velocity = new Moorhuhn.Vector(4, 0);
                 //console.log(this.savedPosition);
             };
             this.velocity = new Moorhuhn.Vector(4, 0);
-            this.wingColor = this.getRandomColor();
-            //this.savedPosition = _position;
+            this.savedPosition = _position;
         }
         move() {
             this.position.add(this.velocity);
