@@ -381,7 +381,7 @@ namespace Moorhuhn {
     export function deleteFood(): void {
         foodsArray.splice(0, 1); //an nullter stelle wird 1 element gelöscht
     }
-    
+
     async function handleSendHS(_name: string, _score: number): Promise<void> {
         let query: string = "score=" + _score + "&name=" + _name;
         let response: Response = await fetch(url + "?" + query);
@@ -393,11 +393,12 @@ namespace Moorhuhn {
         let name: any = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
         if (name != null) {
             handleSendHS(name, score);
-            //window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self"); //self das es 
-            
+            //self das es 
+
         }
+        window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self");
     }
 
-    
+
 
 }
