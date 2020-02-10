@@ -42,7 +42,7 @@ namespace Moorhuhn {
         }
 
         update(): void {
-            this.move();
+            //this.move();
             this.draw();
             this.size *= (0.95);
             this.r1 *= (0.95);

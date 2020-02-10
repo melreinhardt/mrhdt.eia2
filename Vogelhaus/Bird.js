@@ -10,6 +10,7 @@ var Moorhuhn;
                 //console.log(this.savedPosition);
             };
             this.velocity = new Moorhuhn.Vector(4, 0);
+            this.wingColor = this.getRandomColor();
             //this.savedPosition = _position;
             //this.wingColor = this.getRandomColor()
         }
@@ -53,7 +54,7 @@ var Moorhuhn;
             Moorhuhn.crc2.beginPath();
             Moorhuhn.crc2.stroke();
             Moorhuhn.crc2.rotate(-45);
-            Moorhuhn.crc2.fillStyle = "#b30000";
+            Moorhuhn.crc2.fillStyle = this.wingColor;
             Moorhuhn.crc2.fillRect(-5, -15, 5, 15);
             Moorhuhn.crc2.closePath();
             Moorhuhn.crc2.restore();
@@ -91,6 +92,14 @@ var Moorhuhn;
             Moorhuhn.crc2.stroke();
             Moorhuhn.crc2.closePath();
             Moorhuhn.crc2.restore();
+        }
+        getRandomColor() {
+            let letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
         }
         update() {
             if (this.position.y <= 300)

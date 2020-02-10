@@ -1,11 +1,12 @@
 namespace Moorhuhn {
     export class Bird extends Movables {
-        //wingColor: string;
+        wingColor: string;
         savedPosition: Vector;
 
         constructor(_position: Vector) {
             super(_position);
             this.velocity = new Vector(4, 0);
+            this.wingColor = this.getRandomColor();
             //this.savedPosition = _position;
 
             //this.wingColor = this.getRandomColor()
@@ -17,6 +18,7 @@ namespace Moorhuhn {
             //console.log(this.savedPosition);
         }
 
+        
 
         move(): void {
             this.position.add(this.velocity);
@@ -69,7 +71,7 @@ namespace Moorhuhn {
             crc2.beginPath();
             crc2.stroke();
             crc2.rotate(-45);
-            crc2.fillStyle = "#b30000";
+            crc2.fillStyle = this.wingColor;
             crc2.fillRect(-5, -15, 5, 15);
             crc2.closePath();
 
@@ -118,6 +120,16 @@ namespace Moorhuhn {
 
             crc2.restore();
         }
+
+        getRandomColor(): string {
+            let letters: string = "0123456789ABCDEF";
+            let color: string = "#";
+            for (let i: number = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
 
         update(): void {
 
