@@ -16,20 +16,31 @@ namespace Moorhuhn {
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
        
-        let nameArray: string[] = [];
-        let scoreArray: string[] = [];
+        //let nameArray: string[] = [];
+        //let scoreArray: string[] = [];
+
+        interface Highscore {
+            spieler: string;
+            score: string;
+        }
+
+        let final: Highscore[] = [];
+
 
         for (let i: number = 0; i < finalResponse.length; i++) {
-            let nme: string = finalResponse[i].name;
-            let nbr: string = finalResponse[i].score;
-            nameArray.push(nme);
-            scoreArray.push(nbr);
+            let entry: Highscore = {spieler: finalResponse[i].name, score: finalResponse[i].score};
+            final.push(entry);
+
+            //let nme: string = finalResponse[i].name;
+            //let nbr: string = finalResponse[i].score;
+            //nameArray.push(nme);
+            //scoreArray.push(nbr);
         }
-        console.log(nameArray);
-        console.log(scoreArray);
-        
-        highscorelists.innerText = finalResponse; //
-        console.log(finalResponse);
+        //console.log(nameArray);
+        //console.log(scoreArray);
+
+        //highscorelists.innerText = final; //
+        console.log(final);
 
     }
 }
