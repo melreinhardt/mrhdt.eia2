@@ -297,7 +297,7 @@ namespace Moorhuhn {
             food.update();
         }
 
-        for (let movable of moveablesArray) { //wie birds wenn auch in dem Array gespeichert zugriff ohne die schneeflocken auch zu beachten?
+        for (let movable of moveablesArray) { 
             movable.update();
         }
 

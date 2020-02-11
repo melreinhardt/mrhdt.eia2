@@ -28,7 +28,7 @@ namespace Moorhuhn {
         }
 
         update(): void {
-          this.move();
+            this.move();
             this.draw();
         }
     }

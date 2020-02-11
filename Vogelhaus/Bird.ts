@@ -9,7 +9,7 @@ namespace Moorhuhn {
             this.savedPosition = _position;
         }
 
-        setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target (NACHLESEN!!)
+        setBack: Function = (): void => {       // arrow function sonst this verwiest auf window da event target
             this.position = this.savedPosition; // wie bekomme ich die vögel wieder zurück an den punkt an dem sie gekommen sind?
             this.velocity = new Vector(4, 0);
             //console.log(this.savedPosition);

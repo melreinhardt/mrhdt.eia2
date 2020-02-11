@@ -4,7 +4,7 @@ namespace Moorhuhn {
     let url: string = "https://elfried.herokuapp.com/";
 
     function handleLoad(_event: Event): void {
-    document.getElementById("Highscoreliste").addEventListener("click", handleRetriveHS);
+        document.getElementById("Highscoreliste").addEventListener("click", handleRetriveHS);
 
     }
 
@@ -12,8 +12,9 @@ namespace Moorhuhn {
         let query: string = "command=retrieve";
         let response: Response = await fetch(url + "?" + query);
         let responseText: string = await response.text();
+        let finalResponse: any = JSON.parse(responseText);
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
-        highscorelists.innerText = responseText;
+        highscorelists.innerText = finalResponse;
     }
 }
