@@ -11,13 +11,25 @@ namespace Moorhuhn {
     async function handleRetriveHS(_event: Event): Promise<void> {
         let query: string = "command=retrieve";
         let response: Response = await fetch(url + "?" + query);
-        let responseText: string = await response.text();
-        let finalResponse: any = JSON.parse(responseText);
-        console.log(finalResponse);
+        let responseText: string = await response.text();   // das im letzten
+        let finalResponse: any[] = JSON.parse(responseText); //
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
-        highscorelists.innerText = finalResponse;
-        console.log(finalResponse);
+       
+        let nameArray: string[] = [];
+        let scoreArray: string[] = [];
+
+        for (let i: number = 0; i < finalResponse.length; i++) {
+            let nme: string = finalResponse[i].name;
+            let nbr: string = finalResponse[i].score;
+            nameArray.push(nme);
+            scoreArray.push(nbr);
+        }
+        console.log(nameArray);
+        console.log(scoreArray);
         
+        highscorelists.innerText = finalResponse; //
+        console.log(finalResponse);
+
     }
 }

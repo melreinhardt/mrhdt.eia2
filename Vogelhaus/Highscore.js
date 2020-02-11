@@ -9,11 +9,20 @@ var Moorhuhn;
     async function handleRetriveHS(_event) {
         let query = "command=retrieve";
         let response = await fetch(url + "?" + query);
-        let responseText = await response.text();
-        let finalResponse = JSON.parse(responseText);
-        console.log(finalResponse);
+        let responseText = await response.text(); // das im letzten
+        let finalResponse = JSON.parse(responseText); //
         let highscorelists = document.querySelector("div#report");
-        highscorelists.innerText = finalResponse;
+        let nameArray = [];
+        let scoreArray = [];
+        for (let i = 0; i < finalResponse.length; i++) {
+            let nme = finalResponse[i].name;
+            let nbr = finalResponse[i].score;
+            nameArray.push(nme);
+            scoreArray.push(nbr);
+        }
+        console.log(nameArray);
+        console.log(scoreArray);
+        highscorelists.innerText = finalResponse; //
         console.log(finalResponse);
     }
 })(Moorhuhn || (Moorhuhn = {}));
