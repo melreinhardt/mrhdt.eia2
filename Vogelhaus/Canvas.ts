@@ -420,10 +420,9 @@ namespace Moorhuhn {
     }
 
     function handleEnd(): void {
-        let name: any = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
+        let name: string | null = prompt("Your Score " + score, "Please enter your name"); //dann beides in Datenbank! und wenn es ausgefüllt wurde zurück zur startseite!!
         if (name != null) {
             handleSendHS(name, score);
-            //self das es 
 
         }
         window.open("https://melreinhardt.github.io/mrhdt.eia2/Vogelhaus/startingPage.html", "_self");
