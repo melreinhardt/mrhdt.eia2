@@ -29,7 +29,7 @@ var Moorhuhn;
         for (let i = 0; i < 10; i++) {
             console.log(finalResponse.length);
             let place = 1 + i;
-            let output = place + ". " + finalResponse[i].name + " | Score:" + finalResponse[i].score + "<br>";
+            let output = place + ". " + finalResponse[i].spieler + " | Score:" + finalResponse[i].score + "<br>";
             highscorelists.innerText = output;
         }
         //let nameArray: string[] = [];

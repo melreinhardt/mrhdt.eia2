@@ -41,7 +41,7 @@ namespace Moorhuhn {
         for (let i: number = 0; i < 10; i++) {
             console.log(finalResponse.length);
             let place: number = 1 + i;
-            let output: string = place + ". " + finalResponse[i].name + " | Score:" + finalResponse[i].score + "<br>";
+            let output: string = place + ". " + finalResponse[i].spieler + " | Score:" + finalResponse[i].score + "<br>";
             highscorelists.innerText = output;
         }
 
