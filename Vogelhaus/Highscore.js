@@ -15,6 +15,7 @@ var Moorhuhn;
         let response = await fetch(url + "?" + query);
         let responseText = await response.text(); // das im letzten
         //let finalResponse: any[] = JSON.parse(responseText); //any?
+        console.log(responseText);
         let highscorelists = document.querySelector("div#report");
         highscorelists.innerText = responseText;
         //let nameArray: string[] = [];

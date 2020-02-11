@@ -20,6 +20,7 @@ namespace Moorhuhn {
         let response: Response = await fetch(url + "?" + query);
         let responseText: string = await response.text();   // das im letzten
         //let finalResponse: any[] = JSON.parse(responseText); //any?
+        console.log(responseText);
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
         highscorelists.innerText = responseText;
