@@ -17,7 +17,7 @@ namespace Moorhuhn {
 
     async function handleRetriveHS(_event: Event): Promise<void> {
         let query: string = "command=retrieve";
-        let response: Response = await fetch(url + "?" + query);
+        let response: Response = await fetch(query);
         let responseText: string = await response.text();   // das im letzten
         //let finalResponse: any[] = JSON.parse(responseText); //
 

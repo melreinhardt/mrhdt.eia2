@@ -12,7 +12,7 @@ var Moorhuhn;
     }*/
     async function handleRetriveHS(_event) {
         let query = "command=retrieve";
-        let response = await fetch(url + "?" + query);
+        let response = await fetch(query);
         let responseText = await response.text(); // das im letzten
         //let finalResponse: any[] = JSON.parse(responseText); //
         let highscorelists = document.querySelector("div#report");
