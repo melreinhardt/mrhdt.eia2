@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace Moorhuhn {
     interface HighSLists {
-        [type: string]: string | string[];
+        [type: string]: string | string[] | number | number[];
     }
 
     let highscores: Mongo.Collection;
@@ -76,7 +76,7 @@ export namespace Moorhuhn {
             return "We encountered tecnical problems. Please try again later";
     }
 
-    function storeScore(_score: HighSLists): void { //muss hier nicht noch name rein?
+    function storeScore(_score: HighSLists): void { 
         highscores.insert(_score);
     }
 }
