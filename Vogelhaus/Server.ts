@@ -66,7 +66,7 @@ export namespace Moorhuhn {
 
     async function retrieveHighscore(): Promise<string[] | string> {
         // console.log("Asking DB about Orders ", orders.find());
-        let cursor: Mongo.Cursor = await highscores.find().sort({score: -1});
+        let cursor: Mongo.Cursor = await highscores.find().sort({score: 1});
         let answer: Promise<string[]> = await cursor.toArray();
         console.log("DB CursorToArray", answer);
         if (answer != null) {

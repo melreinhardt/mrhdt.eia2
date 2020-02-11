@@ -53,7 +53,7 @@ var Moorhuhn;
     }
     async function retrieveHighscore() {
         // console.log("Asking DB about Orders ", orders.find());
-        let cursor = await highscores.find().sort({ score: -1 });
+        let cursor = await highscores.find().sort({ score: 1 });
         let answer = await cursor.toArray();
         console.log("DB CursorToArray", answer);
         if (answer != null) {
