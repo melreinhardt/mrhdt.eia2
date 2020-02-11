@@ -14,6 +14,7 @@ var Moorhuhn;
         console.log(finalResponse);
         let highscorelists = document.querySelector("div#report");
         highscorelists.innerText = finalResponse;
+        console.log(finalResponse);
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //# sourceMappingURL=Highscore.js.map

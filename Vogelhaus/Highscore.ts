@@ -17,5 +17,7 @@ namespace Moorhuhn {
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
         highscorelists.innerText = finalResponse;
+        console.log(finalResponse);
+        
     }
 }
