@@ -8,10 +8,10 @@ namespace Moorhuhn {
 
     }
 
-    //interface Highscore {
-        //spieler: string;
-        //score: string;
-    //}
+    interface Highscore {
+        spieler: string;
+        score: string;
+    }
 
 
 
@@ -19,11 +19,19 @@ namespace Moorhuhn {
         let query: string = "command=retrieve";
         let response: Response = await fetch(url + "?" + query);
         let responseText: string = await response.text();   // das im letzten
-        //let finalResponse: any[] = JSON.parse(responseText); //any?
-        console.log(responseText);
+        let finalResponse: Highscore[] = JSON.parse(responseText); //any?
+        //console.log(responseText);
+        
+        let helpingString: string = "";
+
+        for (let i: number = 0; i < 10; i++) {
+            console.log(finalResponse.length);
+            let place: number = 1 + i;
+            helpingString += place + ". " + finalResponse[i].spieler + " | Score:" + finalResponse[i].score + "<br>";
+        }
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
-        highscorelists.innerText = responseText;
+        highscorelists.innerText = helpingString;
 
         //let nameArray: string[] = [];
         //let scoreArray: string[] = [];
