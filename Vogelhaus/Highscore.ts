@@ -39,7 +39,7 @@ namespace Moorhuhn {
         //console.log(nameArray);
         //console.log(scoreArray);
 
-        //highscorelists.innerText = final; //
+        highscorelists.innerText = final; //
         console.log(final);
 
     }
