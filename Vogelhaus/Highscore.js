@@ -6,6 +6,10 @@ var Moorhuhn;
     function handleLoad(_event) {
         document.getElementById("Highscoreliste").addEventListener("click", handleRetriveHS);
     }
+    //interface Highscore {
+    //spieler: string;
+    //score: string;
+    //}
     async function handleRetriveHS(_event) {
         let query = "command=retrieve";
         let response = await fetch(url + "?" + query);
@@ -37,6 +41,5 @@ var Moorhuhn;
         }
         else
             final.push(entry);
-
- 
+*/
 //# sourceMappingURL=Highscore.js.map

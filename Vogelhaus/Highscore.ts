@@ -8,10 +8,10 @@ namespace Moorhuhn {
 
     }
 
-    interface Highscore {
-        spieler: string;
-        score: string;
-    }
+    //interface Highscore {
+        //spieler: string;
+        //score: string;
+    //}
 
 
 
@@ -58,4 +58,4 @@ namespace Moorhuhn {
         }
         else
             final.push(entry);
-
+*/
