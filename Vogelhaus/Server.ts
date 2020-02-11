@@ -46,7 +46,7 @@ export namespace Moorhuhn {
             //}
 
             if (url.query["command"] == "retrieve") { 
-                let report: string[] | string = await retrieveHighscore();
+                let report: string[] | string  | number | number[] = await retrieveHighscore();
                 if (report == "We encountered tecnical problems. Please try again later")
                     _response.write(report);
 
