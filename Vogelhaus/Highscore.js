@@ -32,6 +32,7 @@ var Moorhuhn;
         }
         for (let m = 0; m < final.length; m++) {
             let elem = document.createElement("p");
+            highscorelists.appendChild(elem);
             elem.innerText = final[m].score + "  " + final[m].spieler;
         }
         //highscorelists.innerText = final; //

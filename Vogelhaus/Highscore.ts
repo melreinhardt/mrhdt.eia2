@@ -49,8 +49,8 @@ namespace Moorhuhn {
 
         for (let m: number = 0; m < final.length; m++) {
             let elem: HTMLParagraphElement = document.createElement("p");
+            highscorelists.appendChild(elem);
             elem.innerText = final[m].score + "  " + final[m].spieler;
-
         }
 
         //highscorelists.innerText = final; //
