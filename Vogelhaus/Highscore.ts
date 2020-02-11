@@ -15,7 +15,7 @@ namespace Moorhuhn {
         let finalResponse: any[] = JSON.parse(responseText); //
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
-       
+
         //let nameArray: string[] = [];
         //let scoreArray: string[] = [];
 
@@ -28,19 +28,34 @@ namespace Moorhuhn {
 
 
         for (let i: number = 0; i < finalResponse.length; i++) {
-            let entry: Highscore = {spieler: finalResponse[i].name, score: finalResponse[i].score};
-            final.push(entry);
+            let entry: Highscore = { spieler: finalResponse[i].name, score: finalResponse[i].score };
+            for (let j: number = 0; 0 < final.length; j++) {
+                if (finalResponse[i].score > final[j].score) {
+                    final.splice(j, 0, entry);
+                    break;
+                }
+                else
+                    final.push(entry);
 
-            //let nme: string = finalResponse[i].name;
-            //let nbr: string = finalResponse[i].score;
-            //nameArray.push(nme);
-            //scoreArray.push(nbr);
+                //let nme: string = finalResponse[i].name;
+                //let nbr: string = finalResponse[i].score;
+                //nameArray.push(nme);
+                //scoreArray.push(nbr);
+            }
+            //console.log(nameArray);
+            //console.log(scoreArray);
+
         }
-        //console.log(nameArray);
-        //console.log(scoreArray);
 
-        highscorelists.innerText = final; //
-        console.log(final);
+        for (let m: number = 0; m < final.length; m++) {
+            let elem: HTMLParagraphElement = document.createElement("p");
+            elem.innerText = final[m].score + "  " + final[m].spieler;
+
+        }
+
+        //highscorelists.innerText = final; //
+        //console.log(final);
+
 
     }
 }

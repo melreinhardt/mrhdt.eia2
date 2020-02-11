@@ -15,16 +15,27 @@ var Moorhuhn;
         let final = [];
         for (let i = 0; i < finalResponse.length; i++) {
             let entry = { spieler: finalResponse[i].name, score: finalResponse[i].score };
-            final.push(entry);
-            //let nme: string = finalResponse[i].name;
-            //let nbr: string = finalResponse[i].score;
-            //nameArray.push(nme);
-            //scoreArray.push(nbr);
+            for (let j = 0; 0 < final.length; j++) {
+                if (finalResponse[i].score > final[j].score) {
+                    final.splice(j, 0, entry);
+                    break;
+                }
+                else
+                    final.push(entry);
+                //let nme: string = finalResponse[i].name;
+                //let nbr: string = finalResponse[i].score;
+                //nameArray.push(nme);
+                //scoreArray.push(nbr);
+            }
+            //console.log(nameArray);
+            //console.log(scoreArray);
         }
-        //console.log(nameArray);
-        //console.log(scoreArray);
-        highscorelists.innerText = final; //
-        console.log(final);
+        for (let m = 0; m < final.length; m++) {
+            let elem = document.createElement("p");
+            elem.innerText = final[m].score + "  " + final[m].spieler;
+        }
+        //highscorelists.innerText = final; //
+        //console.log(final);
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //# sourceMappingURL=Highscore.js.map
