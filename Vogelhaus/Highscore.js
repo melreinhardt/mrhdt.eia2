@@ -10,8 +10,9 @@ var Moorhuhn;
         let query = "command=retrieve";
         let response = await fetch(url + "?" + query);
         let responseText = await response.text();
+        let finalResponse = JSON.parse(responseText);
         let highscorelists = document.querySelector("div#report");
-        highscorelists.innerText = responseText;
+        highscorelists.innerText = finalResponse;
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //# sourceMappingURL=Highscore.js.map

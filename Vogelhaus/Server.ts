@@ -45,7 +45,7 @@ export namespace Moorhuhn {
             //    _response.write(key + ":" + url.query[key] + "<br/>");
             //}
 
-            if (url.query["command"] == "retrieve") {
+            if (url.query["command"] == "retrieve") { 
                 let report: any[] | string = await retrieveOrders();
                 if (report == "We encountered tecnical problems. Please try again later")
                     _response.write(report);
@@ -61,7 +61,7 @@ export namespace Moorhuhn {
                 console.log(jsonString);
             }
         }
-        _response.end();
+        _response.end(); 
     }
 
     async function retrieveOrders(): Promise<any[] | string> {
