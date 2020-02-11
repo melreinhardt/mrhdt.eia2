@@ -64,10 +64,11 @@ export namespace Moorhuhn {
         _response.end(); 
     }
 
-    async function retrieveHighscore(): Promise<any[] | string> {
+    async function retrieveHighscore(): Promise<string[] | string> {
         // console.log("Asking DB about Orders ", orders.find());
-        let cursor: Mongo.Cursor = await highscores.find().sort({"highscores.score": 1});
-        let answer: Promise<any[]> = await cursor.toArray();
+        let db: Mongo.Cursor = await highscores.createIndex({score: 1});
+        db = await highscores.find().sort({score: 1});
+        let answer: Promise<string[]> = await db.toArray();
         console.log("DB CursorToArray", answer);
         if (answer != null) {
             return answer;
