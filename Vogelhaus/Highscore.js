@@ -6,22 +6,45 @@ var Moorhuhn;
     function handleLoad(_event) {
         document.getElementById("Highscoreliste").addEventListener("click", handleRetriveHS);
     }
+    function playerDataSort(_a, _b) {
+        let returnNumber;
+        if (_b.score > _a.score) {
+            returnNumber = -1;
+        }
+        else if (_b.score < _a.score) {
+            returnNumber = 1;
+        }
+        else {
+            returnNumber = 0;
+        }
+        return returnNumber;
+    }
     async function handleRetriveHS(_event) {
         let query = "command=retrieve";
         let response = await fetch(url + "?" + query);
         let responseText = await response.text(); // das im letzten
         let finalResponse = JSON.parse(responseText); //
         let highscorelists = document.querySelector("div#report");
-        let final = [];
-        for (let i = 0; i < finalResponse.length; i++) {
-            let entry = { spieler: finalResponse[i].name, score: finalResponse[i].score };
-            for (let j = 0; 0 < final.length; j++) {
+        finalResponse.sort(playerDataSort);
+        for (let i = 0; i < 10; i++) {
+            console.log(finalResponse.length);
+            let place = 1 + i;
+            let output = place + ". " + finalResponse[i].name + " | Score:" + finalResponse[i].score + "<br>";
+            highscorelists.innerText = output;
+        }
+        //let nameArray: string[] = [];
+        //let scoreArray: string[] = [];
+        //let final: Highscore[] = [];
+        /*for (let i: number = 0; i < finalResponse.length; i++) {
+            let entry: Highscore = { spieler: finalResponse[i].name, score: finalResponse[i].score };
+            for (let j: number = 0; 0 < final.length; j++) {
                 if (finalResponse[i].score > final[j].score) {
                     final.splice(j, 0, entry);
                     break;
                 }
                 else
                     final.push(entry);
+
                 //let nme: string = finalResponse[i].name;
                 //let nbr: string = finalResponse[i].score;
                 //nameArray.push(nme);
@@ -29,14 +52,19 @@ var Moorhuhn;
             }
             //console.log(nameArray);
             //console.log(scoreArray);
+
         }
-        for (let m = 0; m < final.length; m++) {
-            let elem = document.createElement("p");
+
+        for (let m: number = 0; m < final.length; m++) {
+            let elem: HTMLParagraphElement = document.createElement("p");
             highscorelists.appendChild(elem);
             elem.innerText = final[m].score + "  " + final[m].spieler;
         }
+
         //highscorelists.innerText = final; //
         //console.log(final);
+
+        */
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //# sourceMappingURL=Highscore.js.map
