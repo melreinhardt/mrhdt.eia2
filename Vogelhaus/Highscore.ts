@@ -36,10 +36,11 @@ namespace Moorhuhn {
 
         let highscorelists: HTMLDivElement = <HTMLDivElement>document.querySelector("div#report");
 
-        finalResponse.sort(playerDataSort);
+        //finalResponse.sort(playerDataSort);
 
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < finalResponse.length; i++) {
             console.log(finalResponse.length);
+            finalResponse.sort(playerDataSort);
             let place: number = 1 + i;
             let output: string = place + ". " + finalResponse[i].spieler + " | Score:" + finalResponse[i].score + "<br>";
             highscorelists.innerText = output;

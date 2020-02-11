@@ -25,9 +25,10 @@ var Moorhuhn;
         let responseText = await response.text(); // das im letzten
         let finalResponse = JSON.parse(responseText); //
         let highscorelists = document.querySelector("div#report");
-        finalResponse.sort(playerDataSort);
-        for (let i = 0; i < 10; i++) {
+        //finalResponse.sort(playerDataSort);
+        for (let i = 0; i < finalResponse.length; i++) {
             console.log(finalResponse.length);
+            finalResponse.sort(playerDataSort);
             let place = 1 + i;
             let output = place + ". " + finalResponse[i].spieler + " | Score:" + finalResponse[i].score + "<br>";
             highscorelists.innerText = output;
