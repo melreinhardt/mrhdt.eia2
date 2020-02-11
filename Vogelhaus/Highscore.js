@@ -10,8 +10,9 @@ var Moorhuhn;
         let query = "command=retrieve";
         let response = await fetch(url + "?" + query);
         let responseText = await response.text(); // das im letzten
-        let finalResponse = JSON.parse(responseText); //any?
+        //let finalResponse: any[] = JSON.parse(responseText); //any?
         let highscorelists = document.querySelector("div#report");
+        highscorelists.innerText = responseText;
         //let nameArray: string[] = [];
         //let scoreArray: string[] = [];
         //let final: Highscore[] | null = [];
@@ -24,7 +25,6 @@ var Moorhuhn;
         //scoreArray.push(nbr);
         //nameArray.push(nme);
         //scoreArray.push(nbr);
-        highscorelists.innerText = finalResponse;
     }
 })(Moorhuhn || (Moorhuhn = {}));
 //let final: Highscore[] = [];
